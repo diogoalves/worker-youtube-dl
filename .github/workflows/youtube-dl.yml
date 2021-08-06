@@ -23,7 +23,9 @@ jobs:
           requirements: requirements.txt
 
       - name: Run a one-line script
-        run: echo Hello, world!
+        env:
+          CREDENTIALS: ${{ secrets.CREDENTIALS }}
+        run: python test.py
 
       - name: Run a multi-line script
         run: |
